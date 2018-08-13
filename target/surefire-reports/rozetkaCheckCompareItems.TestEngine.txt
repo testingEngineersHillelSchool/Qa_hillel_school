@@ -1,11 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: rozetkaCheckCompareItems.TestEngine
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 122.974 sec <<< FAILURE!
-verifySearchFunctionality(rozetkaCheckCompareItems.TestEngine)  Time elapsed: 122.849 sec  <<< ERROR!
-java.lang.NullPointerException
-	at rozetkaCheckCompareItems.ComparePage.pressCompareItems(ComparePage.java:21)
-	at rozetkaCheckCompareItems.TestEngine.verifySearchFunctionality(TestEngine.java:28)
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 35.083 sec <<< FAILURE!
+verifySearchFunctionality(rozetkaCheckCompareItems.TestEngine)  Time elapsed: 34.995 sec  <<< FAILURE!
+junit.framework.ComparisonFailure: values are not equal expected:<[4] ца> but was:<[3] ца>
+	at junit.framework.Assert.assertEquals(Assert.java:100)
+	at rozetkaCheckCompareItems.ResultComparePage.compareByType(ResultComparePage.java:34)
+	at rozetkaCheckCompareItems.TestEngine.verifySearchFunctionality(TestEngine.java:43)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

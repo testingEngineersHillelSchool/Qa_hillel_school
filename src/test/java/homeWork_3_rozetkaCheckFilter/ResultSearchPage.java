@@ -1,4 +1,4 @@
-package rozetkaCheckFilter;
+package homeWork_3_rozetkaCheckFilter;
 
 import java.util.ArrayList;
 import org.openqa.selenium.WebElement;
@@ -8,7 +8,7 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class AllTabletsPage {
+public class ResultSearchPage {
   
   @FindBys(
     @FindBy(xpath="//div[contains(@class, 'g-i-tile-i-title')]/a"))
@@ -19,13 +19,8 @@ public class AllTabletsPage {
    
   private final WebDriver driver;
   
-  public AllTabletsPage(final WebDriver driver){
+  public ResultSearchPage(final WebDriver driver){
     this.driver=driver;
-//    driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-//    WebDriverWait driverWait=new WebDriverWait(driver, 10);
-//    driverWait.until(ExpectedConditions.elementToBeClickable(
-//    By.xpath("//i[@class='filter-parametrs-i-l-i-default-title' and text()='Samsung']")));
-//    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     PageFactory.initElements(driver, this);
   }
   public List<String>getItemsList(String pattern){

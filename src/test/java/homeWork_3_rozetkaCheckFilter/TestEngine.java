@@ -1,4 +1,4 @@
-package rozetkaCheckFilter;
+package homeWork_3_rozetkaCheckFilter;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -9,8 +9,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TestEngine {
-
+  
   WebDriver driver;
+  
+  private static final String SEARCH_RESULT_PARTICAL_LINK=
+                                                                            "tablets/c130309/filter/";
   
   @Before
   public void driverSetUp(){
@@ -22,12 +25,11 @@ public class TestEngine {
   }@Test
   public void verifySearchFunctionality(){
     final EntrancePage mainPage=new EntrancePage(driver);
-    AllNotebooksPage allNotebooksPage=mainPage.doClickOnNotebook();
-    AccessoriesTablesPage accessoriesPage=allNotebooksPage.doClickOnTablets();
-    AllTabletsPage allTabletsPage=accessoriesPage.doClickOnAllTablets();
+    ResultSearchPage resultSearchPage=mainPage.navigeteByParcialLink(
+                                                      SEARCH_RESULT_PARTICAL_LINK);
     String brendName="samsung";
-    List<String>brendItems=allTabletsPage.getItemsList(brendName);
-    SamsungFilterPage samsungFilterPage=allTabletsPage.doClickOnFilter();
+    List<String>brendItems=resultSearchPage.getItemsList(brendName);
+    SamsungFilterPage samsungFilterPage=resultSearchPage.doClickOnFilter();
     samsungFilterPage.verifySearchFunctionlity(brendItems);
   }@After
   public void driverTeamDown(){
